@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".view.fragment.shop.accepted.OrderAcceptedFragment">
+
+        <ImageView
+            android:id="@+id/ivSuccess"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_100sdp"
+            android:src="@drawable/img_success"
+            android:layout_marginTop="@dimen/_80sdp"
+            android:layout_gravity="center_horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/tvSuccess"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvSuccess"
+            style="@style/SubHeadTextView"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:text="Your Order has been accepted"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivSuccess" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvProcess"
+            style="@style/SubHeadTextView"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:gravity="center_horizontal"
+            android:textColor="@color/color_Disable_text"
+            app:layout_constraintBottom_toTopOf="@id/btnTrack"
+            android:text="your oredr some time delay for network problem"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvSuccess" />
+
+
+        <View
+            android:id="@+id/viewSpace"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvProces" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnTrack"
+            style="@style/SubHeadButton"
+            android:text="Track Order"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toTopOf="@id/btnTrack"
+            android:layout_marginTop="@dimen/_20sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvProcess" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvProces"
+            style="@style/SubHeadTextView"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:textColor="@color/black"
+            android:text="Back to home"
+            android:textStyle="bold"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:layout_gravity="center_horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnTrack" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

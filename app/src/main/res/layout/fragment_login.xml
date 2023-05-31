@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:orientation="vertical"
+        tools:context="com.example.befresh.view.fragment.auth.LoginFragment">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/_20sdp">
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_120sdp"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_50sdp"
+                android:src="@drawable/befresh_splash_lofo" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/HeadTextView"
+                android:layout_marginTop="@dimen/_38sdp"
+                android:text="@string/log_in"
+                android:textStyle="bold"
+                android:textSize="@dimen/_16ssp" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_18sdp"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/SubHeadTextView"
+                    android:text="@string/phone"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12ssp" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/et_emailLogin"
+                    style="@style/SubEditText"
+                    android:layout_marginTop="@dimen/_6sdp"
+                    android:inputType="number"
+                    android:maxLength="10"
+                    android:paddingVertical="0dp"
+                    android:textSize="@dimen/_12ssp" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/SubHeadTextView"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:text="@string/password"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12ssp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/loginSignIn_InputLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginHorizontal="@dimen/_24sdp"
+                    android:layout_marginTop="@dimen/_6sdp"
+                    app:hintAnimationEnabled="false"
+                    app:hintEnabled="false"
+                    app:passwordToggleEnabled="true">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_passwordLogin"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/bg_edittext"
+                        android:gravity="center_vertical"
+                        android:inputType="textPassword"
+                        android:padding="0dp"
+                        android:paddingStart="@dimen/_10sdp"
+                        android:singleLine="true"
+                        android:textColorHint="@color/black"
+                        android:textSize="@dimen/_12ssp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvForgot_pass"
+                    style="@style/SubHeadTextView"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:text="@string/forgot_you_password"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12ssp" />
+
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_login"
+                    style="@style/SubHeadButtonSecond"
+                    android:layout_marginTop="@dimen/_28sdp"
+                    android:text="@string/login"
+                    android:textSize="@dimen/_12ssp"
+                    android:textStyle="bold" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvCreate_account"
+                    style="@style/SubHeadTextView"
+                    android:layout_gravity="center"
+                    android:padding="@dimen/_5sdp"
+                    android:text="@string/not_a_member_create_an_account"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12ssp" />
+
+
+                <LinearLayout
+                    android:id="@+id/layoutGoogleLogin"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginHorizontal="@dimen/_22sdp"
+                    android:layout_marginTop="@dimen/_22sdp"
+                    android:background="@drawable/bg_button_stroke"
+                    android:elevation="2dp"
+                    android:gravity="center"
+                    android:visibility="visible">
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_marginEnd="@dimen/_6sdp"
+                        android:src="@drawable/googleicon" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="-2dp"
+                        android:text="@string/sign_in_with_google"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layoutFacebookLogin"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginHorizontal="@dimen/_22sdp"
+                    android:layout_marginTop="@dimen/_13sdp"
+                    android:layout_marginBottom="@dimen/_3sdp"
+                    android:background="@drawable/bg_button_stroke"
+                    android:elevation="2dp"
+                    android:gravity="center"
+                    android:visibility="visible">
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_marginEnd="@dimen/_6sdp"
+                        android:src="@drawable/facebookicon" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/sign_in_with_facebook"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    </androidx.core.widget.NestedScrollView>
+</layout>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/item_click"
+    android:orientation="vertical"
+    >
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_8sdp"
+        android:orientation="horizontal">
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_editHome"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:padding="@dimen/_8sdp"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/edit"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_itemNav"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="sdnbbjsd"
+            android:layout_gravity="center_vertical"
+            android:padding="@dimen/_8sdp"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:textColor="@color/purple_200"
+            android:textSize="@dimen/_14ssp"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/purple_200"/>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context="com.example.befresh.view.fragment.auth.OTPScreen">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvLogin"
+            style="@style/HeadTextView"
+            android:layout_marginTop="@dimen/_40sdp"
+            android:text="@string/enter_otp"
+            android:textColor="@color/purple_200"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvOtpSent"
+            style="@style/SubHeadTextView"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:text="OTP is sent to + 9034312062"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvLogin" />
+
+        <LinearLayout
+            android:id="@+id/LL_Et_otp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_24sdp"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:orientation="horizontal"
+            android:padding="@dimen/_10sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvOtpSent">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/ET_otp1"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_48sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_edittext"
+                android:gravity="center"
+                android:inputType="numberDecimal"
+                android:maxLength="1"
+                android:text=""
+                android:textColor="@color/black"
+                android:textCursorDrawable="@color/purple_200"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvOtpSent" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/ET_otp2"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_48sdp"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_edittext"
+                android:gravity="center"
+                android:inputType="numberDecimal"
+                android:maxLength="1"
+                android:text=""
+                android:textColor="@color/black"
+                android:textCursorDrawable="@color/purple_200"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvOtpSent" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/ET_otp3"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_48sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_edittext"
+                android:gravity="center"
+                android:inputType="numberDecimal"
+                android:maxLength="1"
+                android:text=""
+                android:textColor="@color/black"
+                android:textCursorDrawable="@color/purple_200"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvOtpSent" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/ET_otp4"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_48sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_edittext"
+                android:gravity="center"
+                android:inputType="numberDecimal"
+                android:maxLength="1"
+                android:text=""
+                android:textColor="@color/black"
+                android:textCursorDrawable="@color/purple_200"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvOtpSent" />
+
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_Verify"
+            style="@style/SubHeadButtonSecond"
+            android:layout_marginTop="@dimen/_28sdp"
+            android:text="@string/verify_otp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/LL_Et_otp"
+            android:textSize="@dimen/_12ssp"
+            android:textStyle="bold" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

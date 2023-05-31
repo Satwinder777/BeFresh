@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.example.befresh.MainActivity">
+
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/navControllerFragmentHome"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:defaultNavHost="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/bottomNavigationBar"
+            app:navGraph="@navigation/nav_home"
+            tools:ignore="MissingClass" />
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomNavigationBar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_50sdp"
+            android:background="@color/white"
+            android:paddingTop="@dimen/_6sdp"
+            android:textSize="@dimen/_20sdp"
+            app:itemIconSize="@dimen/_20sdp"
+            app:itemIconTint="@drawable/nav_item_color"
+            app:itemTextColor="@drawable/nav_item_color"
+
+            app:labelVisibilityMode="labeled"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:menu="@menu/bottom_navigation_menu_client_side"
+            tools:ignore="MissingClass" />
+
+        <!--    <com.example.befresh.utils.SwipeLockViewPager-->
+        <!--        android:id="@+id/viewPagerClient"-->
+        <!--        android:layout_width="match_parent"-->
+        <!--        android:layout_height="wrap_content"-->
+        <!--        android:layout_above="@+id/bottomNavigationBar" />-->
+
+
+        <!--    <com.google.android.material.bottomnavigation.BottomNavigationView-->
+        <!--        android:id="@+id/bottomNavigationBar"-->
+        <!--        android:layout_width="match_parent"-->
+        <!--        android:layout_height="52dp"-->
+        <!--        android:layout_alignParentBottom="true"-->
+        <!--        android:background="@color/white"-->
+        <!--        app:itemIconSize="@dimen/_18sdp"-->
+        <!--        app:itemIconTint="@drawable/nav_item_color"-->
+        <!--        app:itemTextAppearanceActive="@style/BottomNavigationView.Active"-->
+        <!--        app:itemTextAppearanceInactive="@style/BottomNavigationView"-->
+        <!--        app:itemTextColor="@drawable/nav_item_color"-->
+        <!--        app:labelVisibilityMode="labeled"-->
+        <!--        app:menu="@menu/bottom_navigation_menu_client_side" />-->
+
+        <!--    <androidx.drawerlayout.widget.DrawerLayout-->
+        <!--        android:id="@+id/drawer_layout_user"-->
+        <!--        android:layout_width="match_parent"-->
+        <!--        android:layout_height="match_parent"-->
+        <!--        android:visibility="gone"-->
+        <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--        app:layout_constraintEnd_toEndOf="parent"-->
+        <!--        app:layout_constraintStart_toStartOf="parent"-->
+        <!--        app:layout_constraintTop_toTopOf="parent"-->
+        <!--        tools:openDrawer="end">-->
+
+
+        <!--        <androidx.coordinatorlayout.widget.CoordinatorLayout-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content" />-->
+
+
+        <!--        <com.google.android.material.navigation.NavigationView-->
+        <!--            android:id="@+id/navigation_view"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="match_parent"-->
+        <!--            android:layout_gravity="end"-->
+        <!--            android:background="@color/white"-->
+        <!--            android:fitsSystemWindows="true">-->
+
+        <!--            <ScrollView-->
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="match_parent"-->
+        <!--                android:orientation="vertical">-->
+
+
+        <!--                <androidx.appcompat.widget.LinearLayoutCompat-->
+        <!--                    android:layout_width="match_parent"-->
+        <!--                    android:layout_height="wrap_content"-->
+        <!--                    android:orientation="vertical">-->
+
+
+        <!--                    <androidx.appcompat.widget.LinearLayoutCompat-->
+        <!--                        android:layout_width="match_parent"-->
+        <!--                        android:layout_height="wrap_content"-->
+        <!--                        android:layout_marginLeft="@dimen/_18sdp"-->
+        <!--                        android:layout_marginTop="@dimen/_28sdp"-->
+        <!--                        android:orientation="horizontal">-->
+
+        <!--                        <androidx.cardview.widget.CardView-->
+        <!--                            android:layout_width="56dp"-->
+        <!--                            android:layout_height="56dp"-->
+        <!--                            app:cardCornerRadius="@dimen/_8sdp">-->
+
+        <!--                            <ImageView-->
+        <!--                                android:id="@+id/imageUser"-->
+        <!--                                android:layout_width="match_parent"-->
+        <!--                                android:layout_height="match_parent"-->
+        <!--                                android:scaleType="fitXY"-->
+        <!--                                android:src="@drawable/befresh_splash_lofo" />-->
+
+        <!--                        </androidx.cardview.widget.CardView>-->
+
+        <!--                        <androidx.appcompat.widget.LinearLayoutCompat-->
+        <!--                            android:layout_width="0dp"-->
+        <!--                            android:layout_height="match_parent"-->
+        <!--                            android:layout_marginLeft="@dimen/_13sdp"-->
+        <!--                            android:layout_weight="1"-->
+        <!--                            android:orientation="vertical">-->
+
+        <!--                            <TextView-->
+        <!--                                android:id="@+id/user_drawer"-->
+        <!--                                style="@style/HeadTextView"-->
+        <!--                                android:layout_width="wrap_content"-->
+        <!--                                android:layout_height="wrap_content"-->
+        <!--                                android:layout_marginStart="0dp"-->
+        <!--                                android:ellipsize="end"-->
+        <!--                                android:maxLines="2"-->
+        <!--                                android:text=""-->
+        <!--                                android:textColor="@color/black"-->
+        <!--                                android:textSize="@dimen/_16sdp"-->
+        <!--                                android:textStyle="bold" />-->
+
+        <!--                            <TextView-->
+        <!--                                style="@style/SubHeadTextView"-->
+        <!--                                android:layout_width="wrap_content"-->
+        <!--                                android:layout_height="wrap_content"-->
+        <!--                                android:layout_marginStart="0dp"-->
+        <!--                                android:layout_marginTop="@dimen/_2sdp"-->
+        <!--                                android:text=""-->
+        <!--                                android:textColor="@color/black"-->
+        <!--                                android:textSize="@dimen/_14sdp" />-->
+
+        <!--                        </androidx.appcompat.widget.LinearLayoutCompat>-->
+
+
+        <!--                    </androidx.appcompat.widget.LinearLayoutCompat>-->
+
+        <!--                    <View-->
+        <!--                        android:id="@+id/viewMenu"-->
+        <!--                        android:layout_width="match_parent"-->
+        <!--                        android:layout_height="1dp"-->
+        <!--                        android:layout_below="@+id/back_icon"-->
+        <!--                        android:layout_marginTop="@dimen/_18sdp"-->
+        <!--                        android:background="@color/purple_200" />-->
+
+        <!--                    <androidx.recyclerview.widget.RecyclerView-->
+        <!--                        android:id="@+id/rv_homeNavUser"-->
+        <!--                        android:layout_width="match_parent"-->
+        <!--                        android:layout_height="match_parent"-->
+        <!--                        android:orientation="vertical"-->
+        <!--                        android:overScrollMode="never"-->
+        <!--                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"-->
+        <!--                        tools:itemCount="3"-->
+        <!--                        tools:listitem="@layout/item_menu_list_layout" />-->
+
+
+        <!--                </androidx.appcompat.widget.LinearLayoutCompat>-->
+        <!--            </ScrollView>-->
+        <!--        </com.google.android.material.navigation.NavigationView>-->
+
+        <!--    </androidx.drawerlayout.widget.DrawerLayout>-->
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

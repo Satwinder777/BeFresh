@@ -1,0 +1,242 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-android'
+    id 'kotlin-parcelize'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+    id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'
+
+
+
+
+
+}
+
+
+//apply plugin: 'com.google.gms.google-services'
+
+// Apply the Crashlytics Gradle plugin
+apply plugin: 'com.google.firebase.crashlytics'
+
+static def versionCodeCalculator(versionMajor, versionMinor, buildNum) {
+
+    return versionMajor * 1000000 + versionMinor * 1000 + buildNum
+}
+// This method calculates build version for a module
+static def versionNameCalculator(versionMajor, versionMinor, buildNum) {
+
+    return String.valueOf(versionMajor) + "." + String.valueOf(versionMinor) + "." + String.valueOf(buildNum)
+}
+
+
+android {
+    flavorDimensions "default"
+    compileSdk 32
+
+    defaultConfig {
+//        applicationId "com.example.befresh"
+//        versionCode 1
+//        versionName "1.0"
+        minSdk 24
+        targetSdk 32
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        debug {
+            debuggable true
+//            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            minifyEnabled false
+            proguardFile 'proguard-rules.pro'
+            jniDebuggable false
+        }
+        release {
+            debuggable false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            minifyEnabled false
+            proguardFile 'proguard-rules.pro'
+            jniDebuggable false
+            // shrinkResources true
+        }
+    }
+    productFlavors {
+        graphDevelopment {
+            applicationId "com.example.befresh"
+            getProps('./config/beFreshDevelopment.props').each { p ->
+                buildConfigField 'String', p.key, p.value
+            }
+            versionCode versionCodeCalculator(1, 0, 0)
+            versionName versionNameCalculator(1, 0, 0)
+            resValue 'bool', 'usesCleartextTraffic', 'false'
+            resValue 'string', 'app_name', 'BeFresh'
+
+        }
+
+        graphProduction {
+            applicationId "com.example.befresh"
+            getProps('./config/beFreshProduction.props').each { p ->
+                buildConfigField 'String', p.key, p.value
+            }
+            versionCode versionCodeCalculator(1, 0, 0)
+            versionName versionNameCalculator(1, 0, 0)
+
+            resValue 'bool', 'usesCleartextTraffic', 'false'
+            resValue 'string', 'app_name', 'BeFresh'
+        }
+    }
+
+
+//    buildTypes {
+//        release {
+//            minifyEnabled false
+//            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+//        }
+//    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        dataBinding true
+    }
+    defaultConfig {
+        vectorDrawables.useSupportLibrary = true // For srcCompat
+    }
+}
+
+def getProps(path) {
+    Properties props = new Properties()
+    props.load(new FileInputStream(file(path)))
+    return props
+}
+
+dependencies {
+    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'androidx.appcompat:appcompat:1.5.1'
+    implementation 'com.google.android.material:material:1.7.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.5.3'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.5.3'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.4'
+
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.4.1'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1'
+    implementation 'com.google.android.libraries.places:places:2.6.0'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.4.2'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.4.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
+
+
+    // Networking
+    implementation "com.squareup.retrofit2:retrofit:2.9.0"
+    implementation "com.squareup.okhttp3:okhttp:5.0.0-alpha.3"
+    implementation "com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.3"
+    implementation "com.squareup.retrofit2:converter-gson:2.9.0"
+
+    //Coroutine
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.1"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.2"
+    implementation 'com.google.code.gson:gson:2.8.9'
+
+    //LifeCycle
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.0-rc01")
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.5.0-rc01")
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.5.0-rc01")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-savedstate:2.5.0-rc01")
+
+    //noinspection LifecycleAnnotationProcessorWithJava8
+    kapt "androidx.lifecycle:lifecycle-compiler:2.5.0-rc01"
+    implementation("androidx.lifecycle:lifecycle-common-java8:2.5.0-rc01")
+
+    //hilt
+    implementation 'com.google.dagger:hilt-android:2.40.1'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    kapt 'com.google.dagger:hilt-compiler:2.39.1'
+    implementation "androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha03"
+    kapt "androidx.hilt:hilt-compiler:1.0.0"
+    implementation 'androidx.hilt:hilt-navigation-fragment:1.0.0'
+    implementation 'androidx.hilt:hilt-work:1.0.0'
+    kapt 'androidx.hilt:hilt-compiler:1.0.0'
+//    viewModel
+//     implementation "android.arch.lifecycle:extensions:1.1.1"
+
+
+    // Import the Firebase BoM
+    implementation platform('com.google.firebase:firebase-bom:29.0.4')
+    implementation 'com.google.firebase:firebase-messaging'
+    implementation 'com.google.firebase:firebase-crashlytics'
+    implementation 'com.google.firebase:firebase-analytics'
+    implementation 'com.google.firebase:firebase-crashlytics-buildtools:2.8.1'
+    implementation 'com.google.firebase:firebase-messaging-ktx:23.0.0'
+
+
+    //facebook login sdk.
+    implementation 'com.facebook.android:facebook-android-sdk:latest.release'
+
+    //for current location
+    implementation 'com.google.android.gms:play-services-location:20.0.0'
+
+    //this for set circular images
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+    implementation 'com.google.android.gms:play-services-auth:20.2.0'
+    implementation 'com.google.android.gms:play-services-location:20.0.0'
+    implementation 'com.google.android.gms:play-services-maps:18.1.0'
+    implementation 'com.google.android.gms:play-services-fido:18.1.0'
+
+    //this for get firebase token and this is used for notification.
+    implementation 'com.google.firebase:firebase-messaging'
+    implementation 'com.google.firebase:firebase-core'
+
+    def lifecycle_ver = "2.2.0-alpha01"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_ver"
+
+    implementation 'com.google.maps.android:places-ktx:2.0.0'
+    implementation 'com.google.android.libraries.places:places:3.0.0'
+    //Glide
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
+
+    //Encrypt
+    implementation "androidx.security:security-crypto:1.1.0-alpha03"
+
+    // required to avoid crash on Android 12 API 31
+    implementation 'androidx.work:work-runtime-ktx:2.7.0'
+
+//    shimmer
+    implementation 'com.facebook.shimmer:shimmer:0.5.0'
+    implementation "androidx.recyclerview:recyclerview:1.1.0"
+
+
+    //dexter permission
+    implementation 'com.karumi:dexter:6.2.3'
+//    implementation 'com.github.mmin18:realtimeblurview:1.2.1'
+
+
+    // carbon
+    implementation 'tk.zielony:carbon:0.16.0.1'
+    implementation 'id.zelory:compressor:3.0.1'
+
+    // Handling all screen sizes android
+    implementation 'com.intuit.sdp:sdp-android:1.0.6'
+    implementation 'com.intuit.ssp:ssp-android:1.0.6'
+
+
+    // slider image
+    implementation 'com.github.denzcoskun:ImageSlideshow:0.1.0'
+
+    //
+    implementation "com.google.android.libraries.places:places:3.0.0"
+
+    //drawroute
+    implementation 'com.github.malikdawar:drawroute:1.1-rx'
+
+
+
+
+}

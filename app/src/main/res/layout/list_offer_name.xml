@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvOfferName"
+            style="@style/HeadTextView"
+            android:text="Exclusive Offer"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvOfferNamesd"
+            style="@style/SubHeadTextView"
+            android:text="See all"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:textSize="@dimen/_10ssp"
+            android:textColor="@color/purple_200"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvOfferDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:spanCount="2"
+            tools:itemCount="2"
+            android:layout_marginTop="@dimen/_2sdp"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            tools:listitem="@layout/list_offer_details"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvOfferName" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

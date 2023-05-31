@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="mainViewModel"
+            type="com.example.befresh.model.response.SignUpResponse.Data" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:orientation="vertical"
+        tools:context="com.example.befresh.view.fragment.auth.SignupFragment">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/_20sdp">
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_120sdp"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_50sdp"
+                android:src="@drawable/befresh_splash_lofo" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/HeadTextView"
+                android:layout_marginTop="@dimen/_38sdp"
+                android:text="@string/sign_up"
+                android:textSize="@dimen/_16ssp"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_18sdp"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/SubHeadTextView"
+                    android:text="@string/phone"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12ssp" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/et_PhoneNumber"
+                    style="@style/SubEditText"
+                    android:layout_marginTop="@dimen/_6sdp"
+                    android:inputType="number"
+                    android:maxLength="10"
+                    android:paddingVertical="0dp"
+                    android:textSize="@dimen/_12ssp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/SubHeadTextView"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:text="Full Name"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12ssp" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etName"
+                    style="@style/SubEditText"
+                    android:layout_marginTop="@dimen/_6sdp"
+                    android:inputType="textEmailAddress"
+                    android:paddingVertical="0dp"
+                    android:text=""
+                    android:textSize="@dimen/_12ssp" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/SubHeadTextView"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:text="@string/password"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12ssp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/signUp_InputLayout_Password"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginHorizontal="@dimen/_24sdp"
+                    android:layout_marginTop="@dimen/_6sdp"
+                    app:hintAnimationEnabled="false"
+                    app:hintEnabled="false"
+                    app:passwordToggleEnabled="true">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_passwordSignUp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/bg_edittext"
+                        android:gravity="center_vertical"
+                        android:inputType="textPassword"
+                        android:padding="0dp"
+                        android:paddingStart="@dimen/_10sdp"
+                        android:singleLine="true"
+                        android:textColorHint="@color/black"
+                        android:textSize="@dimen/_12ssp"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/SubHeadTextView"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:text="@string/confirm_password"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12ssp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/Confirm_signup"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginHorizontal="@dimen/_24sdp"
+                    android:layout_marginTop="@dimen/_6sdp"
+                    app:hintAnimationEnabled="false"
+                    app:hintEnabled="false"
+                    app:passwordToggleEnabled="true">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_confirm_signup"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/bg_edittext"
+                        android:gravity="center_vertical"
+                        android:inputType="textPassword"
+                        android:padding="0dp"
+
+                        android:paddingStart="@dimen/_10sdp"
+                        android:singleLine="true"
+                        android:textColorHint="@color/black"
+                        android:textSize="@dimen/_12ssp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_SignUp"
+                    style="@style/SubHeadButtonSecond"
+                    android:layout_marginTop="@dimen/_28sdp"
+                    android:text="@string/create_account"
+                    android:textSize="@dimen/_12ssp"
+                    android:textStyle="bold" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvLogin_account"
+                    style="@style/SubHeadTextView"
+                    android:layout_gravity="center"
+                    android:padding="@dimen/_5sdp"
+                    android:text="@string/already_have_an_account_signup"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12ssp" />
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    </androidx.core.widget.NestedScrollView>
+</layout>
